@@ -1,6 +1,6 @@
 # html
 
-HTML escape and unescape inspired by [html](https://golang.org/pkg/html/).
+HTML escape/unescape inspired by [html](https://golang.org/pkg/html/) and html template literal inspired by `lit-html`.
 
 ### escape
 
@@ -26,10 +26,10 @@ console.log(unescape("&quot;Fran &amp; Freddie&#39;s Diner&quot; &lt;tasty@examp
 
 ### html
 
-Template literal to safely embed values inside html fragments inspired by `lit-html`.
+Template literal to safely embed values inside html fragments.
 
 ```ts
-import { html } from "https://deno.land/x/html_escape/html.ts";
+import { html, HTMLTemplate } from "https://deno.land/x/html_escape/html.ts";
 
 const list = ["one", "with", `"escaping"`];
 function li(value: string): HTMLTemplate {
