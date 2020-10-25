@@ -7,7 +7,7 @@ HTML escape/unescape inspired by [html](https://golang.org/pkg/html/) and html t
 Escape five html entities: <, >, &, ' and ".
 
 ```ts
-import { escape } from "https://deno.land/x/html_escape@$STD_VERSION/escape.ts";
+import { escape } from "https://deno.land/x/html_escape/escape.ts";
 
 console.log(escape(`"Fran & Freddie's Diner" <tasty@example.com>`));
 // &#34;Fran &amp; Freddie&#39;s Diner&#34; &lt;tasty@example.com&gt;
@@ -18,7 +18,7 @@ console.log(escape(`"Fran & Freddie's Diner" <tasty@example.com>`));
 Unescape html entities to characters.
 
 ```ts
-import { unescape } from "https://deno.land/x/html_escape@$STD_VERSION/unescape.ts";
+import { unescape } from "https://deno.land/x/html_escape/unescape.ts";
 
 console.log(unescape("&quot;Fran &amp; Freddie&#39;s Diner&quot; &lt;tasty@example.com&gt;"));
 // "Fran & Freddie's Diner" <tasty@example.com>
@@ -29,7 +29,7 @@ console.log(unescape("&quot;Fran &amp; Freddie&#39;s Diner&quot; &lt;tasty@examp
 Template literal to safely embed values inside html fragments.
 
 ```ts
-import { html } from "https://deno.land/x/html_escape@$STD_VERSION/html.ts";
+import { html } from "https://deno.land/x/html_escape/html.ts";
 
 const list = ["one", "with", `"escaping"`];
 function li(value: string) {
