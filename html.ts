@@ -1,6 +1,6 @@
 import { escape } from "./escape.ts";
 
-function render(arg: any): string {
+function render(arg: HTMLTemplateItem): string {
   if (arg === undefined || arg === null) {
     return "";
   }
@@ -21,8 +21,8 @@ function render(arg: any): string {
  */
 class HTMLTemplate {
   #templates: readonly string[];
-  #args: any[];
-  constructor(templates: readonly string[], args: any[]) {
+  #args: HTMLTemplateItem[];
+  constructor(templates: readonly string[], args: HTMLTemplateItem[]) {
     this.#templates = templates;
     this.#args = args;
   }
@@ -40,6 +40,8 @@ class HTMLTemplate {
   }
 }
 
+type HTMLTemplateItem = string | HTMLTemplate | HTMLTemplateItem[];
+
 /**
  * Template literal to safely embed variables inside html fragments.
  * @param templates html fragments
@@ -47,7 +49,7 @@ class HTMLTemplate {
  */
 export function html(
   templates: TemplateStringsArray,
-  ...args: any
+  ...args: HTMLTemplateItem[]
 ): HTMLTemplate {
   return new HTMLTemplate(templates.raw, args);
 }

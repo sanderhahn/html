@@ -10,7 +10,7 @@ const response = await fetch("https://html.spec.whatwg.org/entities.json");
 const entities: Entities = await response.json();
 
 const entityMap: { [entity: string]: string } = {};
-for (let [entity, spec] of Object.entries(entities)) {
+for (const [entity, spec] of Object.entries(entities)) {
   entityMap[entity.substr(1)] = spec.characters;
 }
 

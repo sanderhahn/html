@@ -13,9 +13,6 @@ assertEquals(
   "<ul><li>one</li><li>with</li><li>&#34;escaping&#34;</li></ul>",
 );
 
-assertEquals(html`${null}`.toString(), "");
-assertEquals(html`${undefined}`.toString(), "");
-assertEquals(html`${1}`.toString(), "1");
 assertEquals(html`${html`>`}`.toString(), ">");
 assertEquals(html`${[html`>`]}`.toString(), ">");
 assertEquals(html`${[html`${">"}`]}`.toString(), "&gt;");
