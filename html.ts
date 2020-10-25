@@ -19,7 +19,7 @@ function render(arg: any): string {
 /**
  * HTMLTemplate preserves the structure of the template literal.
  */
-export class HTMLTemplate {
+class HTMLTemplate {
   #templates: readonly string[];
   #args: any[];
   constructor(templates: readonly string[], args: any[]) {
