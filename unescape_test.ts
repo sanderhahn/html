@@ -13,4 +13,7 @@ assertEquals(unescape("&copy"), "©");
 assertEquals(unescape("&#225"), "á");
 assertEquals(unescape("&#xE1"), "á");
 assertEquals(unescape("foo &amp bar"), "foo & bar");
-assertEquals(unescape(`<a href="some?param&param">`), `<a href="some?param&param">`);
+assertEquals(
+  unescape(`<a href="some?param&param">`),
+  `<a href="some?param&param">`,
+);

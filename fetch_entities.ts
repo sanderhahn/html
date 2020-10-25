@@ -2,7 +2,9 @@
 // Inspiration: https://github.com/golang/go/blob/master/src/html/entity.go
 
 type Entities = { [entity: string]: Spec };
-interface Spec { characters: string };
+interface Spec {
+  characters: string;
+}
 
 const response = await fetch("https://html.spec.whatwg.org/entities.json");
 const entities: Entities = await response.json();
@@ -13,5 +15,7 @@ for (let [entity, spec] of Object.entries(entities)) {
 }
 
 const code = `// Generated code: do not edit!
-export const entity: { [entity: string]: string } = ${JSON.stringify(entityMap, null, 2)}`;
+export const entity: { [entity: string]: string } = ${
+  JSON.stringify(entityMap, null, 2)
+}`;
 Deno.writeTextFileSync("./entity.ts", code);

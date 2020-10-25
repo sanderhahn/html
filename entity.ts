@@ -434,8 +434,8 @@ export const entity: { [entity: string]: string } = {
   "Proportional;": "∝",
   "Pscr;": "𝒫",
   "Psi;": "Ψ",
-  "QUOT": "\"",
-  "QUOT;": "\"",
+  "QUOT": '"',
+  "QUOT;": '"',
   "Qfr;": "𝔔",
   "Qopf;": "ℚ",
   "Qscr;": "𝒬",
@@ -1753,8 +1753,8 @@ export const entity: { [entity: string]: string } = {
   "quatint;": "⨖",
   "quest;": "?",
   "questeq;": "≟",
-  "quot": "\"",
-  "quot;": "\"",
+  "quot": '"',
+  "quot;": '"',
   "rAarr;": "⇛",
   "rArr;": "⇒",
   "rAtail;": "⤜",
@@ -2230,5 +2230,5 @@ export const entity: { [entity: string]: string } = {
   "zopf;": "𝕫",
   "zscr;": "𝓏",
   "zwj;": "‍",
-  "zwnj;": "‌"
-}
+  "zwnj;": "‌",
+};

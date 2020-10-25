@@ -7,20 +7,23 @@ import { entity } from "./entity.ts";
  * @param html value to unescape
  */
 export function unescape(html: string): string {
-  return html.replaceAll(/&#x[0-9a-fA-F]+;?|&#[0-9]+;?|&[A-Za-z0-9]+;?/g, (match) => {
-    if (match[1] === '#') {
-      if (match[2] === 'x') {
-        const hex = match.substring(3);
-        return String.fromCharCode(parseInt(hex, 16));
+  return html.replaceAll(
+    /&#x[0-9a-fA-F]+;?|&#[0-9]+;?|&[A-Za-z0-9]+;?/g,
+    (match) => {
+      if (match[1] === "#") {
+        if (match[2] === "x") {
+          const hex = match.substring(3);
+          return String.fromCharCode(parseInt(hex, 16));
+        }
+        const dec = match.substring(2);
+        return String.fromCharCode(parseInt(dec));
       }
-      const dec = match.substring(2);
-      return String.fromCharCode(parseInt(dec));
-    }
-    const name = match.substring(1);
-    if (entity[name] !== undefined) {
-      return entity[name];
-    }
-    // unable to unescape
-    return match;
-  });
+      const name = match.substring(1);
+      if (entity[name] !== undefined) {
+        return entity[name];
+      }
+      // unable to unescape
+      return match;
+    },
+  );
 }

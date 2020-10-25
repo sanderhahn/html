@@ -9,7 +9,7 @@ export function escape(text: string): string {
     ">": "&gt;",
     "&": "&amp;",
     "'": "&#39;", // "&#39;" is shorter than "&apos;"
-    "\"": "&#34;", // "&#34;" is shorter than "&quot;"
+    '"': "&#34;", // "&#34;" is shorter than "&quot;"
   };
   return text.replaceAll(/[&<>"']/g, (char) => {
     return entity[char];
